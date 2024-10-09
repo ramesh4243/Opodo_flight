@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -40,10 +41,16 @@ public class PassengerController {
         PassengerDto updatePassenger = passengerService.updatePassenger(passengerId, passengerDto);
         return new ResponseEntity<>(updatePassenger,HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{passengerId}")
     public ResponseEntity<String> deletePassengerById(@PathVariable Long passengerId){
-        passengerService.deletePassengerById(passengerId);
-        return new ResponseEntity<>("Passenger is deleted.",HttpStatus.OK);
+//        passengerService.deletePassengerById(passengerId);
+//        return new ResponseEntity<>("Passenger is deleted.",HttpStatus.OK);
+        if (passengerService.deletePassengerById(passengerId)) {
+            return new ResponseEntity<>("Passenger is deleted", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Passenger not found", HttpStatus.NOT_FOUND);
+        }
     }
     @GetMapping("/{passengerId}")
     public ResponseEntity<PassengerDto> getPassengerById(@PathVariable Long passengerId){

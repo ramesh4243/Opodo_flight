@@ -3,7 +3,6 @@ package com.opodo.controller;
 import com.opodo.entities.Flight;
 import com.opodo.payload.FlightDto;
 import com.opodo.service.impl.FlightService;
-import com.opodo.service.impl.PassengerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 public interface PassengerService {
     PassengerDto createPassenger(PassengerDto passengerDto);
     PassengerDto updatePassenger(Long passengerId, PassengerDto passengerDto);
-    PassengerDto deletePassengerById(Long passengerId);
+    boolean deletePassengerById(Long passengerId);
     PassengerDto getPassengerById(Long passengerId);
     Page<PassengerDto>getPassengers(Pageable pageable);
 

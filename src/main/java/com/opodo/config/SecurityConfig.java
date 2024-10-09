@@ -14,7 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Configuration
+@Configuration  //
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -34,19 +34,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Other security-related configurations can be added here
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
-        http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/api/**").permitAll()
-                .antMatchers("/api/auth/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().disable()
-                .httpBasic();
-    }
+    protected void configure(HttpSecurity http) throws Exception{   //httpSecurity object auto created.
+//        http.csrf().disable()
+//                .authorizeRequests()   //any request coming should be authorize.
+//                .antMatchers(HttpMethod.GET,"/api/**").permitAll()
+//                .antMatchers("/api/auth/**").permitAll()
+//                .anyRequest().authenticated()
+//                .and()
+//                .formLogin().disable()
+//                .httpBasic();
+//    }
+
+            http.csrf().disable()
+                    .authorizeRequests()
+                    .anyRequest().permitAll()  // Allow all requests without authentication
+                    .and()
+                    .formLogin().disable()
+                    .httpBasic().disable();   // Disable basic authentication
+        }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception{      //
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
     }

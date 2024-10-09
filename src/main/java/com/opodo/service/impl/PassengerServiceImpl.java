@@ -1,5 +1,6 @@
 package com.opodo.service.impl;
 
+import com.opodo.entities.Flight;
 import com.opodo.entities.Passenger;
 import com.opodo.exception.ResourceNotFoundException;
 import com.opodo.payload.PassengerDto;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -78,10 +80,16 @@ public class PassengerServiceImpl implements PassengerService{
     }
 
     @Override
-    public PassengerDto deletePassengerById(Long passengerId) {
-        Passenger passengersaved = passengerRepository.findById(passengerId).orElseThrow(() -> new
-                ResourceNotFoundException("Passenger not found."));
-        return passengerToDto(passengersaved);
+    public boolean deletePassengerById(Long passengerId) {
+//        Passenger passengersaved = passengerRepository.findById(passengerId).orElseThrow(() -> new
+//                ResourceNotFoundException("Passenger not found."));
+//        return passengerToDto(passengersaved);
+        Optional<Passenger> optionalPassenger = passengerRepository.findById(passengerId);
+        if (optionalPassenger.isPresent()) {
+            passengerRepository.delete(optionalPassenger.get());
+            return true;
+        }
+        return false;
     }
 
     @Override

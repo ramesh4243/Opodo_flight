@@ -3,6 +3,7 @@ package com.opodo.service.impl;
 import com.opodo.entities.Flight;
 import com.opodo.entities.Passenger;
 import com.opodo.entities.Reservation;
+import com.opodo.exception.ResourceNotFoundException;
 import com.opodo.payload.ReservationDto;
 import com.opodo.repository.FlightRepository;
 import com.opodo.repository.PassengerRepository;
@@ -38,10 +39,10 @@ public class ReservationServiceImpl implements ReservationService{
     public ReservationDto createReservation(ReservationDto reservationDto) {
 
         Flight flight = flightRepository.findById(reservationDto.getFlight().getId())
-                .orElseThrow(() -> new EntityNotFoundException("Flight not found with ID: " + reservationDto.getFlight().getId()));
+                .orElseThrow(() -> new ResourceNotFoundException("Flight not found with ID: " + reservationDto.getFlight().getId()));
 
         Passenger passenger = passengerRepository.findById(reservationDto.getPassenger().getId())
-                .orElseThrow(() -> new EntityNotFoundException("Passenger not found with ID: " + reservationDto.getPassenger().getId()));
+                .orElseThrow(() -> new ResourceNotFoundException("Passenger not found with ID: " + reservationDto.getPassenger().getId()));
 
         Reservation reservation = modelMapper.map(reservationDto, Reservation.class);
         reservation.setFlight(flight);
@@ -55,7 +56,7 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public ReservationDto getReservationById(Long id) {
         Reservation reservation = reservationRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Reservation not found with ID: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Reservation not found with ID: " + id));
 
         return modelMapper.map(reservation, ReservationDto.class);
     }
@@ -63,7 +64,7 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public String deleteReservation(Long id) {
         Reservation reservation = reservationRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Reservation not found with ID: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Reservation not found with ID: " + id));
 
         reservationRepository.delete(reservation);
 

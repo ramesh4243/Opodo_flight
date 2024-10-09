@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="046fcb0e-98e6-4c57-9abc-ac09ae2b93e9" name="Changes" comment="" />
+    <list default="true" id="046fcb0e-98e6-4c57-9abc-ac09ae2b93e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/opodo/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/opodo/payload/ErrorDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/controller/FlightController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/controller/PassengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/controller/PassengerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/entities/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/entities/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/PassengerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/PassengerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/PassengerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/ReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/opodo/service/impl/UserServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +36,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,7 +68,7 @@
       <recent name="com.opodo.payload" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.OpododemoApplication">
     <configuration name="OpododemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.opodo.OpododemoApplication" />
       <module name="opododemo" />
@@ -63,9 +82,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OpododemoApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="opododemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.opodo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.opodo" />
+      <option name="MAIN_CLASS_NAME" value="com.opodo.OpododemoApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.OpododemoApplication" />
+        <item itemvalue="JUnit.OpododemoApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
